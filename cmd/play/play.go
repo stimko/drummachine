@@ -31,12 +31,12 @@ func main() {
 
 	//TODO scan songs directory for names that are a similar match and make a suggestion if exact does not exist
 	song := readSongFile(args[0])
-
 	playSong(song)
 }
 
 func playSong(song Song) {
 
+	//time per step
 	stepTimeNanos := math.Round(float64(60000000000 / song.BPM))
 	currentStep := 0
 	ticker := time.NewTicker(time.Duration(stepTimeNanos) * time.Nanosecond)
@@ -73,6 +73,5 @@ func readSongFile(name string) Song {
 
 	var song Song
 	json.Unmarshal(byteValue, &song)
-
 	return song
 }
