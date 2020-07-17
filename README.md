@@ -7,7 +7,7 @@ This is an exercise in building a rudimentary yet functional drum machine in Go.
 The generate package will generate a song json file representation with the command below. (Four On The Floor in this example)
 
 ```bash
-    cd ./generate
+    cd ./cmd/generate
     go run generate.go
 ```
 
@@ -18,7 +18,7 @@ The generate module has been built in a way that allows it to be easily extendab
 This runs some song generations and checks that the steps are what would be expected in the output.
 
 ```bash
-    cd ./generate
+    cd ./cmd/generate
     go test
 ```
 
@@ -27,6 +27,12 @@ This runs some song generations and checks that the steps are what would be expe
 This package will play a song json file with the command below.
 
 ```bash
-    cd ./play
+    cd ./cmd/play
+    go run play.go <Name of Song>
+```
+
+### Example:
+
+```bash
     go run play.go FourOnTheFloor
 ```
