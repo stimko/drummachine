@@ -10,8 +10,10 @@ import (
 	"time"
 )
 
+// STEPS - number of steps
 const STEPS = 16
 
+// Song - representation of generated song
 type Song struct {
 	Name  string
 	BPM   uint
@@ -19,6 +21,7 @@ type Song struct {
 }
 
 func main() {
+
 	flag.Parse()
 	args := flag.Args()
 	if len(args) != 1 {
@@ -39,6 +42,9 @@ func playSong(song Song) {
 	ticker := time.NewTicker(time.Duration(stepTimeNanos) * time.Nanosecond)
 	done := make(chan bool)
 
+	fmt.Println("Now Playing: " + song.Name)
+	fmt.Println(fmt.Sprintf("BPM: %d", song.BPM))
+
 	go func() {
 		for {
 			select {
@@ -58,6 +64,7 @@ func playSong(song Song) {
 }
 
 func readSongFile(name string) Song {
+
 	jsonFile, err := os.Open("../../songs/" + name + ".json")
 	if err != nil {
 		fmt.Println(err)
@@ -65,7 +72,6 @@ func readSongFile(name string) Song {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
 	var song Song
-
 	json.Unmarshal(byteValue, &song)
 
 	return song
