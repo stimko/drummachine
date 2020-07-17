@@ -1,6 +1,6 @@
 # Rudimentary Drum Machine
 
-This is an exercise in building a rudimentary yet functional drum machine.
+This is an exercise in building a rudimentary yet functional drum machine in Go.
 
 ## Generate Song
 
@@ -11,7 +11,7 @@ This package will generate a song json file representation with the command belo
     go run genrateSong.go
 ```
 
-The package has been built in a way that allows it to be easily extendable. If someone wanted to generate a different beat they would just need to setup the array of tracks(each with their name, id, and steps) and pass them into the `buildSong` method. It could also be extended in other ways such as outputting different file formats.
+The package has been built in a way that allows it to be easily extendable. If someone wanted to generate a different beat they would just need to setup the array of tracks(each with their name, id, and steps) and pass them into the `buildSong` method. It could also be extended in other ways such as outputting different file formats. JSON representation was chosen for songs because of its ease of use and readability.
 
 ## Play Song
 
