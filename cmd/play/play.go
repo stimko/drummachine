@@ -36,7 +36,7 @@ func main() {
 
 func playSong(song Song) {
 
-	//time per step
+	//time per step in nanoseconds
 	stepTimeNanos := math.Round(float64(60000000000 / song.BPM))
 	currentStep := 0
 	ticker := time.NewTicker(time.Duration(stepTimeNanos) * time.Nanosecond)
