@@ -45,7 +45,7 @@ func generateFourOnTheFloorTracks() []Track {
 	snare := Track{
 		Name:  "snare",
 		Id:    2,
-		Steps: "0000100000010000",
+		Steps: "0000100000001000",
 	}
 
 	return []Track{bass, snare, hihat}
@@ -77,5 +77,5 @@ func writeSongToFile(song Song) {
 	jsonData, _ = json.Marshal(song)
 	// file permissions for the output file: equivalent to drw-rw-rw
 	const permissions os.FileMode = 0666
-	ioutil.WriteFile("../../build/"+song.Name+".json", jsonData, permissions)
+	ioutil.WriteFile("../../songs/"+song.Name+".json", jsonData, permissions)
 }
