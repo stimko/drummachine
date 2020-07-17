@@ -4,7 +4,7 @@ This is an exercise in building a rudimentary yet functional drum machine.
 
 ## Generate Song
 
-This package will generate a song binary file with the command below.
+This package will generate a song json file representation with the command below.
 
 ```bash
     cd ./generate
@@ -15,7 +15,7 @@ The package has been built in a way that allows it to be easily extendable. If s
 
 ## Play Song
 
-This package will play a song binary file with the command below.
+This package will play a song json file with the command below.
 
 ```bash
     cd ./play
